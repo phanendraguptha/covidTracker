@@ -1,0 +1,149 @@
+@font-face { 
+  font-family: Gotham; 
+  src: url('./assets/GothamBold.ttf'); 
+} 
+@font-face { 
+  font-family: Gotham-light; 
+  src: url('./assets/GothamBook.ttf'); 
+} 
+@font-face { 
+  font-family: Gotham-medium; 
+  src: url('./assets/GothamMedium.ttf'); 
+} 
+html{
+  margin: 0;
+  padding: 0;
+  margin: auto;
+  font-family: Gotham;
+  --text-color: #14AFE9;
+  --input-color: rgba(54, 81, 92,0.6);
+  --input-border: #F58A97;
+  --container-text: #465F69;
+  --confirmed: #14AFE9;
+  --deaths: #EB5569;
+  --recovered: #14E94C;  
+  -webkit-tap-highlight-color: transparent;
+}
+.main{
+  text-align: center;
+  margin-top: 55px;
+}
+h2{
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: var(--text-color);
+}
+.virus{
+  margin: 3px;
+  width: 80px;
+  vertical-align: middle;
+}
+.inputContainer{
+  position: relative;
+  margin: 60px auto;
+  width: 600px;
+}
+input{
+  width: 587px;
+  padding: 13px 0 13px 16px;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  color: var(--input-color);
+  border: 3px solid var(--input-border);
+  border-radius: 25px;
+  font-weight: Gotham-medium;
+}
+input:focus{
+  outline: none;
+}
+input::placeholder{
+  color: var(--input-color);
+}
+.search{
+  position:absolute;
+  bottom:6.5px;
+  right: 0px;
+  width: 40px;
+  box-shadow: 0 4px 16px rgba(255,77,121,0.25);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.search:hover{  
+  box-shadow: 0 8px 16px rgba(255,77,121,0.25);
+}
+.search:focus{
+  outline: none;
+}
+/* search results */
+section{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.container{
+  margin: 30px;
+  padding: 25px;
+  width: 300px;
+  height: 200px;
+  box-shadow: 0 16px 48px rgba(20, 175, 233,0.15);
+  /* box-shadow: 0 16px 48px #E2E8ED; */
+  border-radius: 20px;
+}
+.container .header{
+  font-size: 22px;  
+  font-weight: Gotham-medium;
+  margin: 28px 20px;
+}
+.container .confirmed{  
+  color: var(--confirmed);
+}
+.container .deaths{  
+  color: var(--deaths);
+}
+.container .recovered{  
+  color: var(--recovered);
+}
+.container p{
+  margin: 12px 20px;
+  font-size: 17px;
+  font-family: Gotham-medium;
+  color: var(--container-text);
+}
+.container p:last-child{
+  font-size: 18px;
+  font-family: Gotham-light;
+}
+
+@media (max-width:768px){
+  html{
+    display: flex;
+  }
+  .main{
+    margin-top: 10px;
+  }
+  h2{
+    margin-left: 15px;
+  }
+  .inputContainer{
+    display: flex;
+    width: 300px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+  input{
+    width: 300px;
+  }
+  .search{
+    right: 7px;
+  }
+  section{
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .container{
+    margin: 20px auto;
+    width: 250px;
+    height: 210px;
+    box-shadow: 0 0 35px rgba(20, 175, 233,0.15);
+  }
+}
