@@ -4,13 +4,13 @@ function load(){
     .then(res => res.json())
     .then(data => {
       var populationC = document.getElementsByClassName("populationC")[0];
-      populationC.innerHTML = data.Global.TotalConfirmed;
+      populationC.innerHTML = data.Global.TotalConfirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
       var populationD = document.getElementsByClassName("populationD")[0];
-      populationD.innerHTML = data.Global.TotalDeaths;
+      populationD.innerHTML = data.Global.TotalDeaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
       var populationR = document.getElementsByClassName("populationR")[0];
-      populationR.innerHTML = data.Global.TotalRecovered;
+      populationR.innerHTML = data.Global.TotalRecovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
       showDate(data.Countries[0].Date);
     })
@@ -36,13 +36,13 @@ function fetchData(){
     .then(res => res.json())
     .then(data => {
       var populationC = document.getElementsByClassName("populationC")[0];
-      populationC.innerHTML = data.confirmed.value;
+      populationC.innerHTML = data.confirmed.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
       var populationD = document.getElementsByClassName("populationD")[0];
-      populationD.innerHTML = data.deaths.value;
+      populationD.innerHTML = data.deaths.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
       var populationR = document.getElementsByClassName("populationR")[0];
-      populationR.innerHTML = data.recovered.value;
+      populationR.innerHTML = data.recovered.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
       showDate(data.lastUpdate);
     })
